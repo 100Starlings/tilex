@@ -24,12 +24,16 @@ defmodule Tilex.Developer do
     |> clean_twitter_handle
   end
 
-  def find_or_create(repo, attrs) do
-    email = Map.get(attrs, :email)
+  def find_or_create(repo, attrs = %{email: email}) do
+    existing_developer = repo.get_by(Developer, email: email)
+    valid_email = String.match?(email, ~r/@#{Application.get_env(:tilex, :hosted_domain)}$/)
 
-    case repo.get_by(Developer, email: email) do
-      %Developer{} = developer ->
+    case {existing_developer, valid_email} do
+      {%Developer{} = developer, _} ->
         {:ok, developer}
+
+      {_, false} ->
+        {:error, email}
 
       _ ->
         %Developer{}
