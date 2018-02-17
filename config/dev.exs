@@ -7,7 +7,7 @@ import Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :tilex, TilexWeb.Endpoint,
-  http: [port: System.get_env("PORT") || 4000],
+  http: [port: System.get_env("PORT") || 4711],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -48,7 +48,7 @@ config :tilex, Tilex.Repo,
   pool_size: 10
 
 config :tilex, :page_size, 50
-config :tilex, :cors_origin, "http://localhost:3000"
-config :tilex, :default_twitter_handle, "hashrocket"
+config :tilex, :cors_origin, "http://til.test"
+config :tilex, :default_twitter_handle, "100Starlings"
 
 config :tilex, :request_tracking, true

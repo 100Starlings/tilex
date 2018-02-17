@@ -11,7 +11,7 @@ html {
 body {
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
-  background: $light;
+  background: linear-gradient(270deg, lighten($gradient-start, 40%), lighten($gradient-stop, 40%));
   color: $dark;
   font-family: $primary-typeface;
   font-size: 1.6em;
@@ -22,9 +22,13 @@ header.site_head {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1;
-  padding: 2vw 6vw;
+  z-index: 10;
+  // padding: 2vw 6vw;
+  height: 6vw;
+  min-height: 3em;
+  padding: 1vw;
   text-align: center;
+  background: linear-gradient(270deg, transparentize($gradient-start, 0.1), transparentize($gradient-stop, 0.1));
 
   div {
     display: inline-block;
@@ -64,7 +68,7 @@ header.site_head {
 
       &.hr {
         color: $red;
-        background: left 55% no-repeat url("/images/hashrocket-logo.png");
+        background: left 55% no-repeat url("/images/100starlings-logo-white.svg");
         background-size: 1.8rem auto;
       }
 

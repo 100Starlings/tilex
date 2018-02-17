@@ -2,14 +2,14 @@ defmodule Tilex.Repo.Migrations.RemoveDefaultFromTwitterHandleColumn do
   use Ecto.Migration
 
   def up do
-    execute """
+    execute("""
       alter table developers alter twitter_handle drop default;
-    """
+    """)
   end
 
   def down do
-    execute """
-      alter table developers alter twitter_handle set default 'hashrocket';
-    """
+    execute("""
+      alter table developers alter twitter_handle set default '100Starlings';
+    """)
   end
 end

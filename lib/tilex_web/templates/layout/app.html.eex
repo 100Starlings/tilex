@@ -9,11 +9,11 @@
     <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
 
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="TIL is an open-source project by Hashrocket that exists to catalogue the sharing & accumulation of knowledge as it happens day-to-day.">
+    <meta name="description" content="TIL is where 100Starlings team members catalogue the sharing and accumulation of knowledge as it happens day-to-day.">
 
     <meta itemprop="name" content="Today I Learned">
     <meta itemprop="brand" content="Today I Learned">
-    <meta itemprop="description" content="TIL is an open-source project by Hashrocket that exists to catalogue the sharing & accumulation of knowledge as it happens day-to-day.">
+    <meta itemprop="description" content="TIL is where 100Starlings team members catalogue the sharing and accumulation of knowledge as it happens day-to-day.">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,17 +56,10 @@
     <% end %>
 
     <header class="site_head <%= if System.get_env("BANNER"), do: "has-banner" %>">
-      <%= if (System.get_env("BANNER")) do %>
-        <div class="banner">
-          <div class="message">
-            Hashrocket is hosting a <strong>Ruby</strong>, <strong>Rails</strong>, and <strong>React</strong> conference. Buy your tickets for <a href="https://www.ancientcityruby.com/">ACR</a> today!
-          </div>
-        </div>
-      <% end %>
       <div>
         <h1><%= link("Today I Learned", to: post_path(@conn, :index)) %></h1>
         <h2>
-          <a href="https://hashrocket.com" class="hr">A Hashrocket project</a>
+          <a href="http://www.100starlings.com" class="logo" alt="100Starlings"></a>
           <span>
             <a href="https://twitter.com/<%= Application.get_env(:tilex, :default_twitter_handle)%>" class="twitter">Follow on Twitter</a>
           </span>
@@ -102,13 +95,13 @@
           <div class="site_nav__toggle">
             <div class="copy">
               Today I Learned is an open-source project by
-              <a href="https://hashrocket.com">
-                Hashrocket
-              </a>
-              that exists to catalogue the sharing & accumulation of knowledge
-              as it happens day-to-day. Posts have a 200-word limit, and
-              posting is open to any Rocketeer as well as selected friends of
-              Hashrocket. We hope you enjoy learning along with us.
+              <a href="https://hashrocket.com">Hashrocket</a> that exists to
+              catalogue the sharing & accumulation of knowledge as it happens
+              day-to-day.<br>
+              <a href="http://www.100starlings.com">100Starlings</a> adopted the
+              idea and deployed a version of their own. Posts have a 200-word
+              limit, and posting is open to any Starling as well as selected
+              friends of 100Starlings. We hope you enjoy learning along with us.
               <ul class="social">
                 <li>
                   <%= link("/#{Application.get_env(:tilex, :default_twitter_handle)}", to: "https://twitter.com/#{Application.get_env(:tilex, :default_twitter_handle)}", class: "social_twitter") %>
