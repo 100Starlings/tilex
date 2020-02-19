@@ -18,7 +18,8 @@ defmodule Tilex.Mixfile do
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test
-      ]
+      ],
+      releases: releases()
     ]
   end
 
@@ -80,6 +81,16 @@ defmodule Tilex.Mixfile do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"]
+    ]
+  end
+
+  defp releases do
+    [
+      tilex: [
+        include_executables_for: [:unix],
+        applications: [runtime_tools: :permanent],
+        steps: [:assemble, :tar]
+      ]
     ]
   end
 end
